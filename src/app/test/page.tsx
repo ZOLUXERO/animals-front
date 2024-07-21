@@ -1,12 +1,12 @@
 import { trace } from "@opentelemetry/api";
 
 async function getCat() {
-  //const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
   return await trace
     .getTracer('get-cat')
     .startActiveSpan('fetch-kitty', async (span) => {
       try {
-        const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
+        //const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
+        const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
         const test = await res.json();
         return test;
       } finally {
