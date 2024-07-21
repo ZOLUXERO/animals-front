@@ -1,7 +1,8 @@
 import Image from "next/image";
 
 async function getCat() {
-  const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
+  //const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
+  const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
   const test = await res.json();
   return test;
 }
