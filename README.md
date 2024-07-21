@@ -1,3 +1,13 @@
+```bash
+npm install @vercel/otel
+
+npm i @opentelemetry/sdk-node
+npm i @opentelemetry/auto-instrumentations-node
+npm i @opentelemetry/exporter-trace-otlp-http
+npm i @opentelemetry/resources
+npm i @opentelemetry/semantic-conventions
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
