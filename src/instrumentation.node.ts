@@ -11,7 +11,8 @@ import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG);
 const exporterOptions = {
   //url: 'http://localhost:4317'
-  url: 'http://opentelemetry-collector.monitoring.svc.cluster.local:4317'
+  //url: 'http://opentelemetry-collector.monitoring.svc.cluster.local:4317'
+  url: 'http://opentelemetry-collector.monitoring.svc.cluster.local:4318/v1/traces',
 }
 
 const sdk = new NodeSDK({
