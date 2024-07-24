@@ -21,7 +21,9 @@
     "@opentelemetry/semantic-conventions": "^1.25.1",
     "@opentelemetry/winston-transport": "^0.5.0",
     "@vercel/otel": "^1.9.1",
+    "jwt-decode": "^4.0.0",
     "next": "14.2.5",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18"
   },

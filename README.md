@@ -8,6 +8,8 @@ npm i @opentelemetry/resources
 npm i @opentelemetry/semantic-conventions
 npm install @opentelemetry/winston-transport @opentelemetry/exporter-jaeger
 npm i @opentelemetry/api
+
+npm i next-auth
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

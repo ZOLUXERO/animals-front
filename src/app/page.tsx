@@ -1,14 +1,15 @@
 import Image from "next/image";
+import { LoginButton } from "./LoginButton";
 
-async function getCat() {
-  const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
-  //const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
-  const test = await res.json();
-  return test;
-}
+//async function getCat() {
+//  const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
+//  //const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
+//  const test = await res.json();
+//  return test;
+//}
 
 export default async function Home() {
-  const cat = await getCat();
+  //const cat = await getCat();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -45,10 +46,8 @@ export default async function Home() {
           height={37}
           priority
         />
-        <ul>
-          {cat ? <li key={cat.id}>{cat.name}</li> : null}
-        </ul>
       </div>
+      <LoginButton></LoginButton>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
