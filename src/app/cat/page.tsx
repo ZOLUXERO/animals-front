@@ -5,10 +5,11 @@ async function getCat() {
     .getTracer('get-cat')
     .startActiveSpan('fetch-kitty', async (span) => {
       try {
-        //const res = await fetch('http://localhost:3000/cats/kitty/1', { cache: 'no-store' });
-        const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
-        const test = await res.json();
-        return test;
+        const response = await fetch('http://localhost:3001/cats/kitty/1', { cache: 'no-store' });
+        //const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
+        const data = await response.json();
+        console.log(`Getting kitty with id: 1`);
+        return data;
       } finally {
         span.end();
       }

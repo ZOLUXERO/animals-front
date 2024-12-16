@@ -6,7 +6,7 @@
 
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    console.log("ahhhh 2")
+    console.log("Starting opentelemetry isntrumentation...");
     await import('./instrumentation.node');
   }
 }
