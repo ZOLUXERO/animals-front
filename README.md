@@ -1,3 +1,8 @@
+# Correr aplicacion con dapr, probar si el dapr corre con el mismo puerto que tiene la aplicacion ``3000`` en teoria deberia funcionar porque esta aplicacion no esta escuchando es decir no esta haciendo uso de DaprServer solo esta usando el cliente
+```bash
+dapr run --app-id animals-front --app-port=3005 --dapr-http-port 3500 --components-path ./components -- npm run dev
+dapr run --app-id animals-front --app-port=3000 --dapr-http-port 3500 --components-path ./components -- npm run dev
+```
 ```bash
 npm install @vercel/otel
 
