@@ -2,6 +2,7 @@ import Image from "next/image";
 import { LoginButton } from "./LoginButton";
 import CitySearch from "./components/city-search/CitySearch";
 import CitySearchDapr from "./components/city-dapr/CitySearch";
+import CitySearchClient from "./components/city-search-client/CitySearch";
 
 //async function getCat() {
 //  const res = await fetch('http://animals.default.svc.cluster.local/cats/kitty/1', { cache: 'no-store' });
@@ -57,13 +58,18 @@ export default async function Home() {
       }
 
       <div className="container mx-auto p-4" >
-        <h1 className="text-2xl mb-4" > City Search </h1>
+        <h1 className="text-2xl mb-4" > City Search Server Component</h1>
         < CitySearch />
       </div>
 
       <div className="container mx-auto p-4" >
         <h1 className="text-2xl mb-4" > City Search using Dapr</h1>
         < CitySearchDapr />
+      </div>
+
+      <div className="container mx-auto p-4" >
+        <h1 className="text-2xl mb-4" > City Search Client Component</h1>
+        < CitySearchClient />
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
