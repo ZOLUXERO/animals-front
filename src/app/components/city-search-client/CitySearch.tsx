@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import cityApi from '@/api/city/cityApi';
-import { getEnv } from '@/app/actions/getenv/getenv';
+//import { getEnv } from '@/app/actions/getenv/getenv';
 
 export default function CitySearchClient() {
   const [query, setQuery] = useState('');
@@ -20,12 +20,9 @@ export default function CitySearchClient() {
       setLoading(true);
       try {
         console.log(cityApi.getUri());
-        const envkey = await getEnv();
+        //const envkey = await getEnv();
         const response = await cityApi.get('/cities/city', {
           params: { search: query },
-          headers: {
-            'x-api-key': envkey
-          }
         });
         setSuggestions(response.data.sugg || []);
       } catch (error) {
