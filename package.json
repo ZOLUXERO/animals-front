@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:prod": "env-cmd -f .env.production next build",
     "start": "next start",
     "start:local": "env-cmd -f .env.local next build && dotenv -e .env.local -- next start",
     "start:prod": "env-cmd -f .env.production next build && dotenv -e .env.production -- next start",
