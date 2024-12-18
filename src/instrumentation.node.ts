@@ -16,14 +16,14 @@ const exporterOptions = {
 }
 
 const sdk = new NodeSDK({
-  //traceExporter: new OTLPTraceExporter(exporterOptions),
+  traceExporter: new OTLPTraceExporter(exporterOptions),
   //traceExporter: new ConsoleSpanExporter(),
   instrumentations: [
     //getNodeAutoInstrumentations(),
     new HttpInstrumentation(),
     new ExpressInstrumentation(),
   ],
-  //spanProcessor: new SimpleSpanProcessor(new OTLPTraceExporter(exporterOptions)),
+  spanProcessor: new SimpleSpanProcessor(new OTLPTraceExporter(exporterOptions)),
   //spanProcessor: new SimpleSpanProcessor(new ConsoleSpanExporter()),
   resource: new Resource({
     [SEMRESATTRS_SERVICE_NAME]: 'animals-front-nextjs',
