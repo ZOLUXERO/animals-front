@@ -1,7 +1,7 @@
 'use server';
 
 import { trace } from "@opentelemetry/api";
-import cityApi from "@/api/city/cityApi";
+import cityApiPrivate from "@/api/cityprivate/cityApi";
 
 export async function searchCities(query: string): Promise<string[]> {
   try {
@@ -10,7 +10,7 @@ export async function searchCities(query: string): Promise<string[]> {
       .startActiveSpan('fetch-city', async (span) => {
         try {
           console.log(`Getting city with query: ${query}`);
-          const request = await cityApi.get(`/cities/city`, {
+          const request = await cityApiPrivate.get(`/cities/city`, {
             params: { search: query }
           });
           //const request = await fetch(`http://localhost:3001/cities/city?search=${query}`, {
