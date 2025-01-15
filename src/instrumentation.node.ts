@@ -8,7 +8,7 @@ import { HttpInstrumentation } from '@opentelemetry/instrumentation-http'
 import { ExpressInstrumentation } from '@opentelemetry/instrumentation-express'
 import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
 
-diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.NONE);
+diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG);
 const exporterOptions = {
   //url: 'http://localhost:4317'
   //url: 'http://opentelemetry-collector.monitoring.svc.cluster.local:4317'
